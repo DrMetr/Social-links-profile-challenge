@@ -27,6 +27,7 @@ body {
 h1 {
     font-weight: 700;
     width: 100%;
+    transition: 0.2s;
 }
 
 h2 {
@@ -55,6 +56,9 @@ img {
     max-width: 350px;
     min-width: 300px;
     margin: auto;
+    animation-name: animation;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
 }
 
 ul {
@@ -76,7 +80,7 @@ li {
     padding: 1rem;
     margin: 0.15rem;
     width: 100%;
-    transition: 1.5s;
+    transition: 1s;
 }
 
 li:hover {
@@ -84,13 +88,52 @@ li:hover {
     transition: 1.5s;
 }
 
+li:active {
+    background-color: var(--black);
+    transition: 0.2s;
+}
+
+h1:active {
+    color: var(--black);
+    transition: 0.2s;
+}
+
 img:hover, h1:hover, li:hover {
     cursor: pointer;
 }
 
 img:hover {
-    transition: 1s;
+    transition: 0.8s;
     width: 35%;
+}
+
+@keyframes animation {
+    0% {
+        -webkit-transform: translateY(-100px);
+        transform: translateY(-100px);
+    }
+    100% {
+        -webkit-transform: translateY(0px); 
+        transform: translateY(0px);
+    }
+}
+
+@-webkit-keyframes animation {
+    0% {
+        -webkit-transform: translateY(-100px);
+        transform: translateY(-100px);
+    }
+    100% {
+        -webkit-transform: translateY(0px); 
+        transform: translateY(0px);
+    }
+}
+
+@media screen and (max-width: 375px) {
+    h1 {
+        font-size: 13rem;
+    }
+
 }
 
 .attribution { font-size: 11px; text-align: center; margin-top: 10px;}
